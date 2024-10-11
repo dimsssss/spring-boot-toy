@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @AllArgsConstructor
-public class TossPgClient implements PgClient<PointChargeDto, PaymentEntity> {
+public class TossPgClient implements PgClient {
     private final ObjectMapper objectMapper = new ObjectMapper();
     private PgHttpClient pgHttpClient;
     private PgType type;

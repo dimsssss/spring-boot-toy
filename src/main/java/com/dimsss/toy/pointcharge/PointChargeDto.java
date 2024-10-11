@@ -4,22 +4,22 @@ import com.dimsss.toy.pointcharge.domain.DiscountType;
 import com.dimsss.toy.pointcharge.domain.PointType;
 import com.dimsss.toy.pointcharge.infra.http.PgType;
 import jakarta.validation.constraints.NotNull;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 @ToString
 @Getter
-@Builder
+@AllArgsConstructor
 public class PointChargeDto {
     private int freelancerId;
     @NotNull
-    private final PgType pgType;
+    private PgType pgType;
     @NotNull
-    private final PointType pointType;
+    private PointType pointType;
     @NotNull
-    private final DiscountType discountType;
+    private DiscountType discountType;
     private String orderId;
     private int amount;
     private String paymentKey;
+
+    protected PointChargeDto() {}
 }

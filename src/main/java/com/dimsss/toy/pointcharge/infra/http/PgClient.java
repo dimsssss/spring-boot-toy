@@ -1,5 +1,8 @@
 package com.dimsss.toy.pointcharge.infra.http;
 
-public interface PgClient<T, P> {
-    P requestPayment(T t);
+import com.dimsss.toy.pointcharge.PaymentEntity;
+import com.dimsss.toy.pointcharge.PointChargeDto;
+
+public interface PgClient {
+    PaymentEntity requestPayment(PointChargeDto pointChargeDto);
 }

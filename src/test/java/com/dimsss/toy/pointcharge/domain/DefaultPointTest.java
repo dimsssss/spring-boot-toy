@@ -1,6 +1,7 @@
 package com.dimsss.toy.pointcharge.domain;
 
 import com.dimsss.toy.pointcharge.PointChargeDto;
+import com.dimsss.toy.pointcharge.infra.http.PgType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,10 +11,7 @@ class DefaultPointTest {
 
     @Test
     void addPoint() {
-        PointChargeDto pointChargeDto = PointChargeDto.builder()
-                        .amount(1000)
-                        .pointType(PointType.NONE)
-                        .build();
+        PointChargeDto pointChargeDto = new PointChargeDto(1, PgType.TOSS, PointType.NONE, DiscountType.NONE, "!@#", 1000, "asdad");
 
         PointEntity point = PointEntity.builder()
                         .chargePoint(0)

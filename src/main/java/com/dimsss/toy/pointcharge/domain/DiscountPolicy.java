@@ -1,5 +1,7 @@
 package com.dimsss.toy.pointcharge.domain;
 
-public interface DiscountPolicy<T, P> {
-    P discount(T t);
+import com.dimsss.toy.pointcharge.PointChargeDto;
+
+public interface DiscountPolicy {
+    PointChargeDto discount(PointChargeDto pointChargeDto);
 }

@@ -2,7 +2,7 @@ package com.dimsss.toy.pointcharge.domain;
 
 import com.dimsss.toy.pointcharge.PointChargeDto;
 
-public class DefaultPoint implements PointPolicy<PointChargeDto, PointEntity, PointEntity> {
+public class DefaultPoint implements PointPolicy {
 
     private int add(int chargePoint, int currentPoint) {
         return chargePoint + currentPoint;
