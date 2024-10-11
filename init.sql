@@ -18,19 +18,18 @@ CREATE TABLE `freelancer_view_log` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
-CREATE TABLE
-  `points` (
-    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `points` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
     `freelancer_id` int(11) NOT NULL,
     `charge_point` int(11) NOT NULL,
     `result_point` int(11) NOT NULL,
     `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
     PRIMARY KEY (`id`),
     KEY `points_index_2` (`freelancer_id`)
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_uca1400_ai_ci
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_uca1400_ai_ci;
 
 CREATE TABLE `payments` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `pg_type` varchar(255) NOT NULL,
   `order_id` varchar(255) NOT NULL,
   `payment_key` varchar(255) NOT NULL,
@@ -79,7 +78,7 @@ insert into `payments` (`approve_at`, `balance_amount`, `created_at`, `freelance
 
 
 CREATE TABLE `temporary_payments` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` varchar(255) NOT NULL,
   `payment_key` varchar(255) NOT NULL,
   `amount` int(11) NOT NULL,
